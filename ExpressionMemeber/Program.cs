@@ -7,7 +7,15 @@ namespace ExpressionMemeber
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Place holder");
+            var newBug = new Bug();
+            //var newEat = newBug.Eat();
+            var pList = newBug.PredatorList();
+
+
+            var nameFormal = newBug.FormalName;
+            
+
+            Console.WriteLine($"This is the pList: {pList}");
             Console.ReadLine();
         }
 
@@ -32,14 +40,18 @@ namespace ExpressionMemeber
     // Class constructor
     public Bug(string name, string species, List<string> predators, List<string> prey)
     {
-        this.Name = name;
-        this.Species = species;
-        this.Predators = predators;
-        this.Prey = prey;
+        Name = name;
+        Species = species;
+        Predators = predators;
+        Prey = prey;
     }
 
-    // Convert this method to an expression member
-    
+            public Bug()
+            {
+            }
+
+            // Convert this method to an expression member
+
 
     public string PreyList() => "," + Prey;
 
