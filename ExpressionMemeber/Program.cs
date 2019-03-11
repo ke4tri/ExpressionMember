@@ -7,7 +7,8 @@ namespace ExpressionMemeber
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Place holder");
+            Console.ReadLine();
         }
 
         public class Bug
@@ -24,13 +25,9 @@ namespace ExpressionMemeber
     public ICollection<string> Prey { get; } = new List<string>();
 
     // Convert this readonly property to an expression member
-    public string FormalName
-    {
-        get
-        {
-            return $"{this.Name} the {this.Species}";
-        }
-    }
+   
+
+    public string FormalName => Name + " " + Species;
 
     // Class constructor
     public Bug(string name, string species, List<string> predators, List<string> prey)
@@ -42,20 +39,14 @@ namespace ExpressionMemeber
     }
 
     // Convert this method to an expression member
-    //public string PreyList()
-    //{
-    //    var commaDelimitedPrey = string.Join(",", this.Prey);
-    //    return commaDelimitedPrey;
-    //}
+    
 
     public string PreyList() => "," + Prey;
 
     // Convert this method to an expression member
-    public string PredatorList()
-    {
-        var commaDelimitedPredators = string.Join(",", this.Predators);
-        return commaDelimitedPredators;
-    }
+   
+
+    public string PredatorList() => "," + Predators;
 
     // Convert this to expression method (hint: use a C# ternary)
     public string Eat(string food)
